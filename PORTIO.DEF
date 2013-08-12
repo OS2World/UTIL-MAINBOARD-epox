@@ -1,0 +1,16 @@
+; The following is **required** in the .DEF file for your application
+; even if it is an EXE
+; You must also have specified IOPL=YES in your config.sys
+
+SEGMENTS
+    ; specify that the code in segment _TEXTIOPL has I/O privilege
+    _TEXTIOPL CLASS 'CODE' IOPL
+
+EXPORTS
+    ; Note that the following names must be upper case
+    ; The linker creates call gates
+    INP   1
+    OUTP  2
+    INPW  1
+    OUTPW 2
+

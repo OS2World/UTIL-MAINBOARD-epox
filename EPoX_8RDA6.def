@@ -1,0 +1,23 @@
+;*****************************************************************************
+;* Portio for OS/2  DEF File                                                 *
+;*                                                                           *
+;*                                                                           *
+;*****************************************************************************
+NAME    bg_EPoX       WINDOWCOMPAT
+
+STACKSIZE 0x8000
+DESCRIPTION "Fan/temp/voltage monitor for EPoX mainboard"
+
+PROTMODE
+
+SEGMENTS
+    ; specify that the code in segment _TEXTIOPL has I/O privilege
+    _TEXTIOPL CLASS 'CODE' IOPL
+
+EXPORTS
+    ; Note that the following names must be upper case
+    ; The linker creates call gates
+    INP   1
+    OUTP  2
+    INPW  1
+    OUTPW 2
